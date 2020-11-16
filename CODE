@@ -1,0 +1,23 @@
+from microbit import *
+
+while True:
+
+    sensor1 = pin0.read_analog()
+    myLight = pin1.read_analog()
+    print((sensor1, myLight))
+
+    if sensor1 > 800 and myLight > 800:
+        display.show(Image.HAPPY)
+        print("nothing")
+
+    elif sensor1 > 800 and myLight < 800:
+            display.show(Image.DIAMOND)
+            print("something")
+
+    elif sensor1 < 1000 and myLight > 800:
+            display.show(Image.HEART)
+            print("everything")
+    else:
+        display.show(Image.SAD)
+    sleep(100)
+
